@@ -3,17 +3,21 @@ import { LumousLogo } from "@/components/logos";
 const columns = [
   {
     title: "Product",
-    links: ["Features", "Open Source", "Documentation", "Changelog"],
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "Open Source", href: "#open-source" },
+    ],
   },
   {
     title: "Resources",
-    // links: ["Blog", "Community", "Roadmap", "GitHub"],
-    links: ["GitHub"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/supersver/Lumous-AI",
+        external: true,
+      },
+    ],
   },
-  //   {
-  //     title: "Developers",
-  //     links: ["OpenRouter", "API Docs", "Self Hosting"],
-  //   },
 ];
 
 export function Footer() {
@@ -23,9 +27,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <LumousLogo />
+
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               An open-source AI workspace. Bring your own keys, own your usage.
             </p>
+
             <p className="mt-5 text-xs font-medium text-muted-foreground">
               Open Source • BYOK • Privacy First
             </p>
@@ -36,14 +42,17 @@ export function Footer() {
               <h3 className="text-sm font-medium text-foreground">
                 {col.title}
               </h3>
+
               <ul className="mt-4 flex flex-col gap-2.5">
-                {col.links.map((link) => (
-                  <li key={link}>
+                {col.links.map((link: any) => (
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
