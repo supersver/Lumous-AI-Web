@@ -1,5 +1,5 @@
-import { Hero } from "@/components/sections";
 import {
+  Hero,
   OpenSource,
   FAQ,
   CTA,
@@ -11,7 +11,7 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -22,6 +22,6 @@ export default function Page() {
         <CTA />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

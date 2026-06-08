@@ -15,7 +15,7 @@ export function OpenSource() {
       id="open-source"
       className="scroll-mt-20 border-y border-border bg-background/50 py-24"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
+      <div className="mx-auto flex flex-col max-w-6xl items-center gap-12 px-6 lg:flex-row">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
             <span className="size-1.5 rounded-full bg-accent" />
@@ -75,14 +75,14 @@ export function OpenSource() {
 
 function GithubStatsCard() {
   return (
-    <div className="rounded-2xl border border-border bg-card/80 p-6 shadow-2xl backdrop-blur-sm">
+    <div className="rounded-2xl border border-border bg-card/80 p-6 shadow-2xl backdrop-blur-sm w-full">
       <div className="flex items-center gap-3 border-b border-border pb-4">
         <div className="flex size-10 items-center justify-center rounded-lg border border-border bg-secondary/60 text-foreground">
           <GithubIcon className="size-5" />
         </div>
         <div className="min-w-0">
           <div className="font-mono text-sm text-foreground">
-            supersver/lumous-ai
+            supersver/Lumous-AI
           </div>
           <div className="truncate text-xs text-muted-foreground">
             Open-source AI workspace with BYOK & cost analytics
@@ -91,7 +91,7 @@ function GithubStatsCard() {
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-3">
-        <Stat icon={Star} label="Stars" value="0" />
+        <Stat icon={Star} label="Stars" value="1" />
         <Stat icon={GitFork} label="Forks" value="0" />
         <Stat icon={Eye} label="Watching" value="0" />
       </div>
