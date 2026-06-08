@@ -61,21 +61,25 @@ The website showcases:
 
 ## Project Structure
 
+## Project Structure
+
+```text
 src/
 ├── app/
-│ ├── docs/
-│ ├── layout.tsx
-│ └── globals.css
+│   ├── docs/
+│   ├── layout.tsx
+│   └── globals.css
 │
 ├── components/
-│ ├── layout/
-│ ├── sections/
-│ └── ui/
+│   ├── layout/
+│   ├── sections/
+│   └── ui/
 │
 ├── data/
 ├── lib/
 ├── public/
-└── types
+└── types/
+```
 
 ## Development
 
