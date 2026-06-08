@@ -1,22 +1,47 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import type { ReactNode } from "react";
-import { Container } from "@/components/layout/Container";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
-export const metadata = {
-  title: "Lumous AI",
-  description: "Premium AI platform for teams — Lumous AI",
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Lumous AI — Open-source AI workspace with BYOK & cost analytics",
+  description:
+    "Lumous AI is an open-source AI workspace that connects to your own providers through OpenRouter. Bring your own API keys, track usage across models, and understand every dollar spent.",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body className="bg-[#030712] text-slate-100 antialiased">
-        <Navbar />
-        <Container>{children}</Container>
-        <Footer />
-      </body>
+    <html
+      lang="en"
+      className={`dark ${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="bg-background font-sans antialiased">{children}</body>
     </html>
   );
 }

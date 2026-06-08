@@ -1,46 +1,88 @@
-"use client";
-import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
-import { motion } from "framer-motion";
+import { ArrowRight, Check } from "lucide-react";
+import { Button } from "@/components/elements";
+import { GithubIcon } from "@/components/logos";
+import { DashboardVisual } from "@/components/ui/DashboardVisual";
 
-export default function Hero() {
+const highlights = [
+  "Bring Your Own Keys",
+  "Encrypted API Key Storage",
+  "Model Usage Analytics",
+  "Cost Transparency",
+];
+
+export function Hero() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#051025] via-transparent to-[#071022] opacity-60 pointer-events-none" />
-      <div className="relative z-10 grid gap-12 lg:grid-cols-2 items-center">
-        <div>
-          <Badge>Announcing: Lumous Agents</Badge>
-          <motion.h1
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="mt-6 text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
-          >
-            Build AI products with{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-sky-400">
-              speed
-            </span>{" "}
-            and control.
-          </motion.h1>
-          <p className="mt-6 text-lg text-slate-300 max-w-xl">
-            Ship production-ready AI features with first-class tooling for
-            teams, integrations, and deployments.
-          </p>
-          <div className="mt-8 flex gap-4">
-            <Button>Get started</Button>
-            <Button variant="ghost">See demo</Button>
+    <section className="relative overflow-hidden">
+      {/* Aurora gradient backdrop */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="absolute left-1/2 top-[-10rem] size-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
+        <div className="absolute right-[-6rem] top-[6rem] size-[28rem] rounded-full bg-accent/20 blur-[120px]" />
+      </div>
+
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-32 lg:grid-cols-2 lg:gap-10 lg:pb-28 lg:pt-40">
+        <div className="flex flex-col items-start">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm">
+            <span className="size-1.5 rounded-full bg-primary" />
+            Open Source • BYOK • Privacy First
           </div>
+
+          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            Build with the best AI models.{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Own your keys. Control your costs.
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+            Lumous AI is an open-source AI workspace that connects to your own
+            providers through OpenRouter. Bring your own API keys, track usage
+            across models, and understand every dollar spent.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Button
+              size="lg"
+              nativeButton={false}
+              render={<a href="https://lumous-ai.vercel.app" />}
+            >
+              Get Started
+              <ArrowRight className="size-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              nativeButton={false}
+              render={
+                <a
+                  href="https://github.com/supersver/Lumous-AI"
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              }
+            >
+              <GithubIcon className="size-4" />
+              View on GitHub
+            </Button>
+          </div>
+
+          <ul className="mt-8 grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
+            {highlights.map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-2 text-sm text-muted-foreground"
+              >
+                <Check className="size-4 shrink-0 text-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="relative">
-          <motion.div
-            initial={{ scale: 0.98, opacity: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-slate-900/60 to-slate-800/40 rounded-3xl p-6 shadow-2xl"
-          >
-            <div className="h-64 bg-gradient-to-tr from-[#041026] to-[#081123] rounded-2xl" />
-          </motion.div>
+          <DashboardVisual />
         </div>
       </div>
     </section>

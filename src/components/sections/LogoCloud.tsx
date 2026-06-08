@@ -1,42 +1,24 @@
-"use client";
-import { useEffect, useRef } from "react";
-import logos from "@/data/logos";
+const logos = ["Anthropic", "OpenAI", "Google", "Meta", "Mistral"];
 
-export default function LogoCloud() {
-  const strip = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const el = strip.current;
-    if (!el) return;
-    let raf = 0;
-    let x = 0;
-    function step() {
-      const container = strip.current;
-      if (!container) return;
-      x -= 0.5;
-      if (x < -container.scrollWidth / 2) x = 0;
-      container.style.transform = `translateX(${x}px)`;
-      raf = requestAnimationFrame(step);
-    }
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
+export function LogoCloud() {
   return (
-    <section className="py-12">
-      <h3 className="text-sm text-slate-400 uppercase tracking-wider">
-        Trusted by teams at
-      </h3>
-      <div className="mt-6 overflow-hidden">
-        <div ref={strip} className="flex gap-8 will-change-transform">
-          {logos.concat(logos).map((logo, idx) => (
-            <div
-              key={idx}
-              className="opacity-80 grayscale hover:grayscale-0 transition"
-            >
-              <img src={logo.src} alt={logo.alt} className="h-8" />
-            </div>
-          ))}
+    <section className="border-y border-border bg-background/50 py-14">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="text-center text-sm text-muted-foreground">
+          Built for everyone using modern AI infrastructure
+        </p>
+
+        <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <div className="flex w-max animate-marquee items-center gap-16">
+            {[...logos, ...logos].map((name, i) => (
+              <span
+                key={`${name}-${i}`}
+                className="whitespace-nowrap text-xl font-semibold tracking-tight text-muted-foreground/50 grayscale transition-colors hover:text-muted-foreground"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,13 +1,27 @@
-import Hero from "@/components/sections/Hero";
-import LogoCloud from "@/components/sections/LogoCloud";
-import Features from "@/components/sections/Features";
+import { Hero } from "@/components/sections";
+import {
+  OpenSource,
+  FAQ,
+  CTA,
+  Features,
+  LogoCloud,
+} from "@/components/sections";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <LogoCloud />
-      <Features />
-    </main>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <LogoCloud />
+        <Features />
+        <OpenSource />
+        <FAQ />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
   );
 }

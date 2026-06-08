@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export default function SectionHeading({
+export function SectionHeading({
   title,
   subtitle,
 }: {

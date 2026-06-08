@@ -1,0 +1,39 @@
+export function LumousLogo({ className }: { className?: string }) {
+  return (
+    <div className="flex items-center gap-2">
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        className={className ?? "size-7"}
+      >
+        <rect width="32" height="32" rx="8" fill="url(#lumous-grad)" />
+        <path
+          d="M9 9v14h11"
+          stroke="oklch(0.16 0.012 250)"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="22" cy="11" r="2.4" fill="oklch(0.16 0.012 250)" />
+        <defs>
+          <linearGradient
+            id="lumous-grad"
+            x1="0"
+            y1="0"
+            x2="32"
+            y2="32"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="oklch(0.82 0.14 185)" />
+            <stop offset="1" stopColor="oklch(0.7 0.16 280)" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <span className="text-base font-semibold tracking-tight text-foreground">
+        Lumous AI
+      </span>
+    </div>
+  );
+}

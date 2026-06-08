@@ -1,33 +1,42 @@
-import { Code, GitBranch, Layers, Zap, Users } from "lucide-react";
+import { Lock, BarChart3, DollarSign, Code, BookOpen, Zap } from "lucide-react";
 import type { Feature } from "@/types";
 
 const features: Feature[] = [
   {
-    title: "AI Agents",
+    title: "Bring Your Own Keys",
     description:
-      "Create autonomous agents that run workflows and automate tasks.",
+      "Connect your own OpenRouter credentials and keep full ownership of your AI infrastructure.",
+    icon: <Lock />,
+  },
+  {
+    title: "Encrypted Storage",
+    description:
+      "API keys are encrypted before storage to help protect sensitive credentials.",
+    icon: <Lock />,
+  },
+  {
+    title: "Model Analytics",
+    description:
+      "Track model usage, requests, tokens, and performance across providers.",
+    icon: <BarChart3 />,
+  },
+  {
+    title: "Cost Tracking",
+    description:
+      "Understand exactly where your AI budget is going with detailed cost insights.",
+    icon: <DollarSign />,
+  },
+  {
+    title: "Open Source",
+    description:
+      "Inspect the code, contribute improvements, and self-host if needed.",
     icon: <Code />,
   },
   {
-    title: "Visual Workflows",
-    description: "Compose models and actions visually and iterate quickly.",
-    icon: <Layers />,
-  },
-  {
-    title: "Version Control",
-    description: "Track and revert model and workflow changes with ease.",
-    icon: <GitBranch />,
-  },
-  {
-    title: "Integrations",
+    title: "Multi-Model Access",
     description:
-      "Connect popular tools and data sources with first-class integrations.",
+      "Use the latest models through OpenRouter without vendor lock-in.",
     icon: <Zap />,
-  },
-  {
-    title: "Team Collaboration",
-    description: "Shared workspaces, permissions, and audit logs for teams.",
-    icon: <Users />,
   },
 ];
 

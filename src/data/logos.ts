@@ -1,8 +1,10 @@
 const logos = [
-  { src: "/logos/stripe.svg", alt: "Stripe" },
-  { src: "/logos/netlify.svg", alt: "Netlify" },
-  { src: "/logos/vercel.svg", alt: "Vercel" },
-  { src: "/logos/supabase.svg", alt: "Supabase" },
+  { src: "/logos/openrouter.svg", alt: "OpenRouter" },
+  { src: "/logos/anthropic.svg", alt: "Anthropic" },
+  { src: "/logos/openai.svg", alt: "OpenAI" },
+  { src: "/logos/google.svg", alt: "Google" },
+  { src: "/logos/meta.svg", alt: "Meta" },
+  { src: "/logos/mistral.svg", alt: "Mistral" },
 ];
 
 export default logos;
