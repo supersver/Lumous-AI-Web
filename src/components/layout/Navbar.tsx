@@ -107,13 +107,6 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#docs"
-            onClick={() => setOpen(false)}
-            className="rounded-md px-2 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-          >
-            Docs
-          </a>
           <Button
             className="mt-2"
             nativeButton={false}

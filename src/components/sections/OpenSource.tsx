@@ -128,7 +128,7 @@ function GithubStatsCard() {
               className="size-2 rounded-full"
               style={{ backgroundColor: "oklch(0.7 0.16 280)" }}
             />
-            Rust
+            React
           </span>
           <span className="flex items-center gap-1.5">
             <span
