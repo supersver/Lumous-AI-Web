@@ -46,7 +46,7 @@ export function Hero() {
             <Button
               size="lg"
               nativeButton={false}
-              render={<a href="https://lumous-ai.vercel.app" />}
+              render={<a href="https://app.getlumous.in" />}
             >
               Get Started
               <ArrowRight className="size-4" />
