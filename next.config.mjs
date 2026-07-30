@@ -38,7 +38,8 @@ const nextConfig = {
       },
       {
         // Cache public images (OG image, favicons, etc.) for 7 days
-        source: "/(.*)\\.(?:png|jpg|jpeg|webp|svg|ico|gif)",
+        // Next.js route sources use path-to-regexp — no non-capturing groups (?:)
+        source: "/:path*.(png|jpg|jpeg|webp|svg|ico|gif)",
         headers: [
           {
             key: "Cache-Control",
